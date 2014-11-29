@@ -11,7 +11,7 @@ In this workshop you'll be building and deploying an AngularJS single page appli
 4. Initialize your Aerobatic credentials by running `yoke login`
 5. Create a new Aerobatic application from the repo you just cloned: `yoke app-create`. Be sure to select `From exiting app` when prompted.
 6. Run `npm install`
-7. Open your app in development mode with: `yoke serve -o`
+7. Open your app in development mode with: `yoke sim -o`
 8. Start coding. Livereload should automatically keep your browser in sync as you save files.
 9. When you're ready to deploy to production: `yoke deploy`
 
