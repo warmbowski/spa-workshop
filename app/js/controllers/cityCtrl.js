@@ -1,5 +1,5 @@
 
-angular.module('controllers').controller('CityCtrl', function($scope, $routeParams, $log, GeoLocation, Forecast, News) {
+angular.module('controllers').controller('CityCtrl', function($scope, $routeParams, $log, geoLocation, forecast, news) {
   'use strict';
 
   this.cityName = $routeParams.city;
@@ -9,13 +9,13 @@ angular.module('controllers').controller('CityCtrl', function($scope, $routePara
 
   // Flatten the promise chain for better readability.
   // http://solutionoptimist.com/2013/12/27/javascript-promise-chains-2/
-  GeoLocation(this.cityName)
+  geoLocation(this.cityName)
     .then(function(latLong) {
-      return Forecast(latLong[0], latLong[1]);
+      return forecast(latLong[0], latLong[1]);
     })
     .then(function(forecast) {
       self.forecast = forecast.data;
-      return News(self.cityName);
+      return news(self.cityName);
     })
     .then(function(news) {
       self.news = news;

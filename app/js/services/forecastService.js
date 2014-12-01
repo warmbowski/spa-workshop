@@ -1,5 +1,5 @@
 
-angular.module('services').factory('Forecast', function($q, $http) {
+angular.module('services').factory('forecast', function($q, $http) {
   return function(lat, lng) {
     // The forecast.io API is not CORS enabled, so we need to proxy the all through
     // the Aerobatic proxy.

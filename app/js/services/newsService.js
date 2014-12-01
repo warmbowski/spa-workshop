@@ -1,4 +1,4 @@
-angular.module('services').factory('News', function($http, $q) {
+angular.module('services').factory('news', function($http, $q) {
   // Demonstrates that the proxy an be used for HTTP requests that aren't APIs, but things like RSS feeds
 
   // To customize the parameters, see this very handy page:

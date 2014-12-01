@@ -1,4 +1,4 @@
-angular.module('services').factory('GeoLocation', function($q, $timeout) {
+angular.module('services').factory('geoLocation', function($q, $timeout) {
   // TODO: Enhance this service to use a GeoLocation API such as the Google maps API
   // https://developers.google.com/maps/documentation/javascript/geocoding
 
@@ -14,7 +14,7 @@ angular.module('services').factory('GeoLocation', function($q, $timeout) {
           deferred.resolve([47.6062,-122.3321]);
           break;
         case "london":
-          deferred.resolve([51.5171,-0.1062])
+          deferred.resolve([51.5171,-0.1062]);
           break;
         case "tokyo":
           deferred.resolve([35.6832,139.8089]);
@@ -27,5 +27,5 @@ angular.module('services').factory('GeoLocation', function($q, $timeout) {
       }
     }, 20);
     return deferred.promise;
-  }
+  };
 });
