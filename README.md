@@ -1,20 +1,21 @@
 # SPA Workshop
 
-In this workshop you'll be building and deploying an AngularJS single page application on the Aerobatic platform. The app itself is a city portal that displays local information for various cities around the world. There should be a homepage accessible at __http://[yourapp].aerobaticapp.com__ that at a minimum has a list of links to each city specific page. Each city should have a dedicated page in the form __http://[yourapp].aerobaticapp.com/cities/seattle__. Each city page should include current weather conditions and news headlines specific to that locale.
+In this workshop you'll be building and deploying an AngularJS single page application on the Aerobatic platform. The app itself is a city portal that displays local information for various cities around the world. This repo provides the basic scaffolding that you can fork to get started. It retrieves the weather for a given city using the [forecast.io API](https://developer.forecast.io/) and local news headlines using the Google News RSS feed. You can see a live demo of this starter template at [http://spa-workshop.aerobaticapp.com](http://spa-workshop.aerobaticapp.com). 
+
 
 ### Getting Started
-1. Login to http://www.aerobatic.com with your GitHub credentials.
-2. Install the yoke command line tool with npm:  `npm install -g yoke-cli`
-3. Pick a name for your app and create a new directory like `teamname-spa-workshop` and `cd` to the new directory.
-3. This repository includes scaffolding for the project to give you a running start. Fork it into your own personal or organization account and clone it locally.
+1. Login to [http://www.aerobatic.com](http://www.aerobatic.com) with your GitHub credentials.
+2. Install the yoke command line tool with npm: `npm install -g yoke-cli`
+3. Fork this repo to your own personal or organization account and clone it locally.
 4. In your terminal `cd` into the directory where you cloned the repo.
-4. Initialize your Aerobatic credentials by running `yoke login`
-5. Create a new Aerobatic application from the repo you just cloned: `yoke app-create`. Be sure to select `existing app` when prompted.
-6. Run `npm install`
+4. Initialize your Aerobatic credentials by running `yoke login`.
+5. Create a new Aerobatic application with the command: `yoke app-create`. Be sure to select `existing app` when prompted.
+6. Run `npm install`.
 7. Register for an API key at [forecast.io](https://developer.forecast.io/). Copy your API key to a new environment variable in your Aerobatic app dashboard called `FORECAST_IO_API_KEY`. Check the _Server Only_ box to prevent the setting from being sent down to the browser in your index page.
-8. Open your app in development mode with: `yoke sim -o`
+8. Open your app in development mode with: `yoke sim -o`.
 9. Start coding. Livereload should automatically keep your browser in sync as you save files.
-10. When you're ready to deploy to production: `yoke deploy`
+10. Before deploying to production, verify the release build of the app run without errors by re-running the simulator in release mode: `yoke sim -o --release`. This will execute the build step specified in the scripts section of `package.json` before launching the app.
+11. If everything looks good, you're ready to deploy to production: `yoke deploy`.
 
 
 ### Enhancement Ideas
