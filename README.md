@@ -1,34 +1,35 @@
 # SPA Workshop
 
-In this workshop you'll be building and deploying an AngularJS single page application on the Aerobatic platform. The app itself will be a city portal that displays local information for a set of cities of your choosing. There should be a homepage accessible at _http://[yourapp].aerobaticapp.com_ that at a minimum has a list of links to each city specific page. Each city should have a dedicated page in the form _http://[yourapp].aerobaticapp.com/cities/seattle_, _http://[yourapp].aerobaticapp.com/cities/chicago_, etc. Each city page should include current weather conditions and local news headlines specific to that geographic location.
+In this workshop you'll be building and deploying an AngularJS single page application on the Aerobatic platform. The app itself is a city portal that displays local information for various cities around the world. There should be a homepage accessible at __http://[yourapp].aerobaticapp.com__ that at a minimum has a list of links to each city specific page. Each city should have a dedicated page in the form __http://[yourapp].aerobaticapp.com/cities/seattle__. Each city page should include current weather conditions and news headlines specific to that locale.
 
 ### Getting Started
 1. Login to http://www.aerobatic.com with your GitHub credentials.
 2. Install the yoke command line tool with npm:  `npm install -g yoke-cli`
-3. Pick a name for your team 
-3. This repository includes scaffolding for the project to give you a running start. Clone it locally with: 
-`git clone https://github.com/aerobatic/spa-workshop.git spa-workshop-teamname && cd spa-workshop-teamname`
+3. Pick a name for your app and create a new directory like `teamname-spa-workshop` and `cd` to the new directory.
+3. This repository includes scaffolding for the project to give you a running start. Fork it into your own personal or organization account and clone it locally.
+4. In your terminal `cd` into the directory where you cloned the repo.
 4. Initialize your Aerobatic credentials by running `yoke login`
-5. Create a new Aerobatic application from the repo you just cloned: `yoke app-create`. Be sure to select `From exiting app` when prompted.
+5. Create a new Aerobatic application from the repo you just cloned: `yoke app-create`. Be sure to select `existing app` when prompted.
 6. Run `npm install`
-7. Open your app in development mode with: `yoke sim -o`
-8. Start coding. Livereload should automatically keep your browser in sync as you save files.
-9. When you're ready to deploy to production: `yoke deploy`
-
-### API Sources
-
-#### Local News
-The Bing search API can return local news if you invoke the api with a query on the city name and a source type of “news”. You’ll need to register your application here. This page has some good information on getting started with the Bing API: [http://www.bing.com/developers/s/APIBasics.html](http://www.bing.com/developers/s/APIBasics.html)
-
-#### Weather
-[Forecast.io](https://forecast.io/) has a nice weather API that is easy to get started with. First you'll need to create an account at [https://developer.forecast.io](https://developer.forecast.io/). Copy your API key and create a new environment variable in your Aerobatic app dashboard called `FORECAST_IO_API_KEY`. 
+7. Register for an API key at [forecast.io](https://developer.forecast.io/). Copy your API key to a new environment variable in your Aerobatic app dashboard called `FORECAST_IO_API_KEY`. Check the _Server Only_ box to prevent the setting from being sent down to the browser in your index page.
+8. Open your app in development mode with: `yoke sim -o`
+9. Start coding. Livereload should automatically keep your browser in sync as you save files.
+10. When you're ready to deploy to production: `yoke deploy`
 
 
 ### Enhancement Ideas
-Time permitting, here's some thoughts on how you might improve upon your application. These are just suggestions, feel free to get creative and take the app in a new direction.
+Here's some thoughts on how you might improve upon the scaffolded app. These are merely suggestions, feel free to get creative and make the app your own.
 
+* Make it look better (the bar is very low to begin)
+* Update `geoLocationService.js` to invoke a geo-location API (like the [Google Maps API](https://developers.google.com/maps/documentation/javascript/geocoding)) rather than hardcoding the lat/long values.
+* Generalize the app to work with any arbitrary city rather than a predetermined list.
+* Show a loading indicator while API calls are in progress.
 * Enhance the current weather conditions to include a future forecast
 * Use the HTML5 location API to auto-suggest which city the current user is in
-* Cache the results of geo-location lookups to repeatedly making the same API calls over and over
-* Use a more web friendly looking representation of the city name in the URL, i.e. `cities/new-york` rather than `cities/New%20York` 
+* Use a more web friendly representation of the city name in the URL, i.e. `cities/new-york` rather than `cities/New%20York` 
+* Display a map of the city
+* Show the local date and time in the city
+* Refactor `cityCtrl.js` to make the API calls to the Forecast and News services in parallel rather than serially. How might this code look were a dozen different APIs invoked to build the page? This article may be of use: [http://solutionoptimist.com/2013/12/27/javascript-promise-chains-2/](http://solutionoptimist.com/2013/12/27/javascript-promise-chains-2/).
+* Implement Angular animations for the view changes, for example a slide-in/out transition.
+* Internationalize the app with [angular-translate](http://angular-translate.github.io/). You could also show news headlines in the language spoken in a particular city by tweaking the parameters to the Google News RSS feed.
 
