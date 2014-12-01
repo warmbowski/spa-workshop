@@ -9,7 +9,7 @@ In this workshop you'll be building and deploying an AngularJS single page appli
 3. Fork this repo to your own personal or organization account and clone it locally.
 4. In your terminal `cd` into the directory where you cloned the repo.
 4. Initialize your Aerobatic credentials by running `yoke login`.
-5. Create a new Aerobatic application with the command: `yoke app-create`. Be sure to select `existing app` when prompted.
+5. Create a new Aerobatic application with the command: `yoke create-app`. Be sure to select `existing app` when prompted.
 6. Run `npm install`.
 7. Register for an API key at [forecast.io](https://developer.forecast.io/). Copy your API key to a new environment variable in your Aerobatic app dashboard called `FORECAST_IO_API_KEY`. Check the _Server Only_ box to prevent the setting from being sent down to the browser in your index page.
 8. Open your app in development mode with: `yoke sim -o`.
