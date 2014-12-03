@@ -3,3 +3,16 @@ body {
   font-family: 'Open Sans',sans-serif;
   background-color: #FFF;
 }
+ul {
+  display: inline;
+  text-decoration: none;
+}
+li {
+  margin: .5em 0 .5em 1em;
+  display: block;
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+  font-size: 4em:;
+}
