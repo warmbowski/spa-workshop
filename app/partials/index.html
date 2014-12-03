@@ -1,6 +1,6 @@
 <div>
   <h2>Cities</h2>
-  <p>Right here, right now, it is {{forecast.currently.summary}}</p>
+  <p>Right here, right now, it is {{forecast.currently.summary || ". . ."}}</p>
   <ul>
     <li ng-repeat="city in this.cities" class='{{city}}'><a ng-href="/cities/{{city}}">{{city}}</a></li>
   </ul>
