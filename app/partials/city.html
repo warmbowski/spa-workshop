@@ -1,11 +1,11 @@
 <h1>{{this.cityName}}</h1>
-
+<div class='{{this.cityName}}'></div>
 <h3>Forecast</h3>
   <div class='{{this.forecast.daily.icon}}'>
     {{this.forecast.daily.summary}}
   </div>
-  <ul ng-repeat='day in this.forecast.daily.data'>
-    <li class='{{day.icon}}'>
+  <ul>
+    <li ng-repeat='day in this.forecast.daily.data' class='{{day.icon}}'>
       {{day.summary}}
     </li>
   </ul>
