@@ -3,7 +3,7 @@ angular.module('controllers').controller('IndexCtrl', function($scope, $location
   'use strict';
 
   this.cities = ['Seattle', 'New York', 'London', 'Tokyo', 'Boston'];
-  $scope.forecast = '...'
+  
   if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position){
         $scope.$apply(function(){
