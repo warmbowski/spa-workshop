@@ -1,7 +1,15 @@
 <h1>{{this.cityName}}</h1>
 
 <h3>Forecast</h3>
-<div>{{this.forecast | json}}</div>
+  <div class='{{this.forecast.daily.icon}}'>
+    {{this.forecast.daily.summary}}
+  </div>
+  <ul ng-repeat='day in this.forecast.daily.data'>
+    <li class='{{day.icon}}'>
+      {{day.summary}}
+    </li>
+  </ul>
 
 <h3>News</h3>
-<div>{{this.news | json}}</div>
+<ul ng-repeat='new in this.news'><li><a href='new.href'>{{new.title}}</li></ul>
+
