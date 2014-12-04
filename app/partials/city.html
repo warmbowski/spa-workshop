@@ -14,6 +14,7 @@
 
 <h3>News</h3>
 <ul>
-  <li ng-repeat='new in this.news'><a href='new.href'>{{new.title}}</li>
+  <li ng-repeat='new in this.news'>
+    <a href='{{new.href}}'>{{new.title}}</a>
+  </li>
 </ul>
-
